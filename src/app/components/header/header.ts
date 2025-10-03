@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './header.html',
   styleUrls: ['./header.css']
 })
-export class Header {}
+export class Header {
+  navLinks = [
+    { path: '/home', label: 'INICIO' },
+    { path: '/about', label: 'SOBRE MÍ' },
+    { path: '/contact', label: 'CONTACTO' }
+  ];
+}
