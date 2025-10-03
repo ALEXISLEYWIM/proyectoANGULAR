@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #1a1510;
+    --secondary-color: #494741;
+    --success-color: #8e8485;
+    --error-color: #862015;
+    --light-color: #eeeef7;
+    --dark-color: #0f0e0e;
+    --gray-color: #b6adaf;
+
+    font-family: 'Manrope', sans-serif;
+}

@@ -1,0 +1,30 @@
+<div class="home-container">
+  <div class="hero-overlay"></div>
+  
+  <div class="hero-content">
+
+    @if (isNewUser) {
+      <div class="welcome-message">
+        <p class="alert-badge">🎉 ¡Bienvenido!</p>
+        <p class="alert-text">Gracias por unirte a nosotros. Estamos emocionados de comenzar este viaje contigo.</p>
+      </div>
+    }
+
+    @if (!isNewUser) {
+      <div class="welcome-message">
+        <p class="alert-badge">👋 ¡Hola de nuevo!</p>
+        <p class="alert-text">Nos alegra verte otra vez. Continuemos transformando ideas juntos.</p>
+      </div>
+    }
+
+    <h1 class="hero-title">Transformamos Ideas en Soluciones Digitales</h1>
+    <p class="hero-subtitle">
+      Impulsamos tu negocio con tecnología innovadora y diseño excepcional
+    </p>
+  
+    <div class="hero-buttons">
+      <button class="btn btn-primary" routerLink="/contact">Comenzar Ahora</button>
+      <button class="btn btn-secondary" routerLink="/about">Conocer Más</button>
+    </div>
+  </div>
+</div>

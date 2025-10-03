@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO DE CONTACTO SIMPLE</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="container small-container">
+        <header class="small-header">
+            <h1>CONTACTA CON NOSOTROS</h1>
+        </header>
+        
+        <div class="form-container small-form">
+            <form *ngIf="!submittedData" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                <div class="form-group small-group">
+                    <label for="name">NOMBRES COMPLETOS *</label>    
+                    <input type="text" id="name" name="name" 
+                    [(ngModel)]="name" 
+                    required 
+                    placeholder="INGRESAR NOMBRES COMPLETOS">
+                    <div class="error" *ngIf="!name && contactForm.submitted">
+                        Por favor ingresar nombre completos
+                    </div>
+                </div>
+
+                <div class="form-group small-group">
+                    <label for="lastname">APELLIDO *</label>
+                    <input type="text" id="lastname" name="lastname" 
+                    [(ngModel)]="lastname" 
+                    required 
+                    placeholder="INGRESAR SUS APELLIDOS">
+                    <div class="error" *ngIf="!lastname && contactForm.submitted">
+                        POR FAVOR, INGRESE SU APELLIDO
+                    </div>
+                </div>
+
+                <div class="form-group small-group">
+                    <label for="email">CORREO ELECTRONICO *</label>
+                    <input type="email" id="email" name="email" 
+                        [(ngModel)]="email" 
+                        required 
+                        placeholder="ejemplo@correo.com">
+                    <div class="error" *ngIf="!email && contactForm.submitted">
+                        POR FAVOR, INGRESE SU CORREO
+                    </div>
+                </div>
+                
+                <div class="form-group small-group">
+                    <label for="message">COMENTARIO *</label>
+                    <textarea id="message" name="message" 
+                        [(ngModel)]="message" 
+                        required 
+                        placeholder="ESCRIBIR COMENTARIO ..."></textarea> 
+                    <div class="error" *ngIf="!message && contactForm.submitted">
+                        POR FAVOR, DEJE SU COMENTARIO
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn small-btn">ENVIAR COMENTARIO</button>
+            </form>
+
+            <div *ngIf="submittedData" class="confirmation">
+            
+            </div>
+        </div>
+    </div>
+</body>
+</html>
